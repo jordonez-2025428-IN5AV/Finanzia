@@ -1,0 +1,1 @@
+import {Injectable} from '@angular/core';@Injectable({providedIn:'root'})export class TokenService{private readonly key='jwt_access_token';get(){return localStorage.getItem(this.key)}set(token:string){localStorage.setItem(this.key,token)}clear(){localStorage.removeItem(this.key)}}
