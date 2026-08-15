@@ -1,0 +1,2 @@
+import {Router} from 'express';import {UserController} from '../controllers/user.controller.js';import {authenticateToken} from '../middlewares/auth.middleware.js';import {requireRole} from '../middlewares/role.middleware.js';
+export function createUserRoutes(c:UserController){const r=Router();r.get('/profile',authenticateToken,c.profile);r.get('/',authenticateToken,requireRole('ADMIN'),c.allUsers);return r;}
